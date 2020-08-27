@@ -27,11 +27,11 @@ RUN pip install jupyter_contrib-nbextensions RISE \
   && jupyter contrib nbextension install --system \
   && jupyter nbextension enable hide_input/main
 
+#Install nbgitpuller
+RUN pip install nbgitpuller
+
 # Cleanup
 RUN rm ijava-kernel.zip
-
-# Add README.md
-ADD "README.md" $HOME
 
 # Set user back to priviledged user.
 USER $NB_USER
